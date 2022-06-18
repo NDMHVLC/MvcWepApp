@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "ClassDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ClassDetail</h2>
+@using (Html.BeginForm("ProgramEkle", "Profile", FormMethod.Post))
+{
+    <div class="container">
+        <div class="row">
+            <input type="hidden" name="Id" value="@Request.QueryString["Id"].ToString()" />
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Ders Adı</label>
+                    <input type="text" name="dersAdi" class="form-control" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Ders Başlangıcı</label>
+                    <input type="datetime-local" name="dersBaslangici" class="form-control" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Ders Bitiş</label>
+                    <input type="datetime-local" name="dersBitisi" class="form-control" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <br />
+                <button class="btn btn-primary">Kaydet</button>
+            </div>
+        </div>
+    </div>
+}
+
+
+
